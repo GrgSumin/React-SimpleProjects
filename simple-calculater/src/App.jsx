@@ -16,6 +16,7 @@ function App() {
   };
   const calculate = () => {
     try {
+      setPrevious(result);
       setResult(eval(result).toString());
     } catch {
       setResult("Error");
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="calculator-grid">
       <div className="output">
+        <div className="previous-operand">{previous}</div>
         <div className="current-operand">{result}</div>
       </div>
       <button onClick={clear} className="span-two" id="clear">
